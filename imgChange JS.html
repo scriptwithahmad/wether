@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile JavaScript - Ahmad</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        list-style: none;
+        font-family: sans-serif;
+        scroll-behavior: smooth;
+        transition: 0.3s ease-in;
+      }
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background: rgba(0, 0, 255, 0.544);
+        height: 100vh;
+        width: 100%;
+      }
+      .container button {
+        display: block;
+        padding: 8px 15px;
+        margin-top: 20px;
+        cursor: pointer;
+        background: darkblue;
+        border: transparent;
+        color: white;
+        box-shadow: 0 0 7px darkblue;
+      }
+      .container img {
+        width: 15rem;
+        /* mix-blend-mode: multiply; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img src="profile3.png" alt="" />
+      <button>Next Img</button>
+      <button>previous Img</button>
+    </div>
+
+    <script>
+      var img = document.querySelector(".container img");
+      var imgChange = document.querySelectorAll(".container button")[0];
+      var previous = document.querySelectorAll(".container button")[1];
+
+      var toggle = 3;
+
+      
+
+      imgChange.addEventListener("click", () => {
+        
+        if(toggle == 6){
+          toggle = 3
+        }else{
+          toggle += 1
+        }
+        img.src = `profile${toggle}.png`
+      });
+
+      previous.addEventListener("click", () => {
+        if(toggle == 3){
+          toggle = 6
+        }else{
+          toggle -= 1
+        }
+        img.src = `profile${toggle}.png`
+      });
+
+    </script>
+  </body>
+</html>
